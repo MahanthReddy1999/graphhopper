@@ -22,6 +22,6 @@ jobs:
           distribution: 'temurin'
       - name: Compile Test for duplicateCoordinatesAtBaseOrAdjNode
         run: mvn clean install -DskipTests -pl core -am
-      - name: Run Test Without Nondex Command
-        run: mvn -pl core test -Dtest=com.graphhopper.routing.DirectionResolverOnQueryGraphTest#duplicateCoordinatesAtBaseOrAdjNode     
+      - name: Run Test with Nondex Command
+        run: mvn -pl core edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest=com.graphhopper.routing.DirectionResolverOnQueryGraphTest#duplicateCoordinatesAtBaseOrAdjNode -DnondexRuns=10    
     
